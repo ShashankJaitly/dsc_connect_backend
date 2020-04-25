@@ -226,10 +226,11 @@ class UserAPIView(
                 generics.ListAPIView):
 	
     permission_classes = (AllowAny,)
+    serializer_class= UserSerializer
     
     def list(self, request):
         queryset = User.objects.all()
-        serializer = UserSerializer(queryset, many=True)
+        serializer = serializer_class(queryset, many=True)
         permission_classes = (IsAdminOrSuperUser,)
         filter_backends = [OrderingFilter]
         
