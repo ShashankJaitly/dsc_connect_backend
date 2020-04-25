@@ -23,11 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-#SECRET_KEY = os.environ['SECRET_KEY']
-SECRET_KEY = '_hix4**qe3#b4#5+&btu8bhmxy-n08#$)ooc-f5oeq*l3*@x4w'
+SECRET_KEY = os.environ['SECRET_KEY']
+#SECRET_KEY = '_hix4**qe3#b4#5+&btu8bhmxy-n08#$)ooc-f5oeq*l3*@x4w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['dsc-connect-backend.herokuapp.com']
 
