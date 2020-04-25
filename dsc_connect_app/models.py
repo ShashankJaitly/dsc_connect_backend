@@ -5,7 +5,7 @@ from .managers import UserManager
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.utils.translation import ugettext_lazy as _
-
+from django.conf import settings
 STATUS_CHOICES = [
 	('0','draft'),
 	('1','published'),
@@ -15,7 +15,7 @@ STATUS_CHOICES = [
 class Dsc(models.Model):
 	
 	
-	author = models.ForeignKey('User', on_delete=models.CASCADE)
+	author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	status = models.CharField(max_length=1, choices = STATUS_CHOICES, default = STATUS_CHOICES[0][1])
 	lead = models.CharField(max_length = 256 , blank = False)
 	name = models.CharField(max_length=50)
